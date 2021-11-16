@@ -19,7 +19,8 @@ public class ElectricCar extends Car{
 	// 하나의 클래스 안에서 파라미터(의 개수, 타입)가 다른 메서드를 같은 이름으로 여러 개 정의하는 것.
 	
 	
-	@Override
+	@Override  // annotation(어노테이션)
+	// - 자바 컴파일러에게 상위 클래스의 메서드 signature와 동일한 지 검사하도록 함.
 	public void drive() {
 		super.drive();  // 상위 클래스의 drive() 메서드를 명시적(explicit)으로 호출	
 		System.out.println("배터리 충전량 = " + charge);
