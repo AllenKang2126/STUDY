@@ -15,6 +15,7 @@ public class Contact {
 		this.phone = phone;
 		this.email = email;
 	}
+	
 
 	// TODO : getters & setters
 	public String getName() {
