@@ -13,6 +13,7 @@ public interface DatabaseModule {
 	int select();
 	
 	/**
+	 * 데이터베이스에서 비밀번호를 수정하는 기능.
 	 * 
 	 * @param pw 수정할 비밀번호
 	 * @return 수정된 자료의 개수(정수).

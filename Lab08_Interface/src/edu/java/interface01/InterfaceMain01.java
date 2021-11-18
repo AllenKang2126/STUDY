@@ -14,7 +14,17 @@ public class InterfaceMain01 {
 	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// 구현된 인터페이스의 기능들을 사용
+		// DatabaseModule.DB_VERSION = 2;  // 인터페이스의 멤버 변수는 public static final
+		
+		// 인터페이스이름 변수 = new 구현클래스생성자();
+//		DatabaseModule db = new OracleDatabaseModule();  // 다형성(polymorphism)
+		// 데이터베이스 모듈이 Oracle에서 MySQL로 바뀐 경우...
+		DatabaseModule db = new MySQLDatabaseModule();
+		
+		// select와 update와 같은 메서드를 사용하는 방법은 바뀌지 않음.
+		db.select();
+		db.update("!@#$");
 
 	}
 
