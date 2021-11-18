@@ -17,6 +17,9 @@ public class InterfaceMain03 {
 			((Customer) customer2).sell();
 		}
 
+		System.out.println();
+		Buyer customer3 = new Customer();
+		customer3.order();
 	}
 
 }  // end class InterfaceMain03
@@ -63,6 +66,7 @@ class Customer implements Buyer, Seller {
 	public void order() {
 		Buyer.super.order();  // Buyer 인터페이스의 order 메서드를 사용.
 		Seller.super.order();  // Seller 인터페이스의 oder 메서드를 사용.
+		System.out.println("Customer order 완료...");
 	}
 	
 }
