@@ -30,12 +30,23 @@ class SubClass extends SuperClass implements MyInterface{}
 // 2개 이상의 인터페이스를 구현하는 경우:
 interface Buyer{
 	void buy();
+	
+	// 다른 인터페이스에서 같은 signature(리턴 타입, 이름, 파라미터)를 갖는 default 메서드가 있는 경우
+	default void order() {
+		System.out.println("구매자 주문...");
+	}
 }  // end interface Buyer
 
 interface Seller {
 	void sell();
+	
+	// 다른 인터페이스에서 같은 signature(리턴 타입, 이름, 파라미터)를 갖는 default 메서드가 있는 경우
+	default void order() {
+		System.out.println("판매자 주문...");
+	}
 }  // end interface Seller
 
+// 2개 이상의 인터페이스를 구현하는 클래스에서 default 메서드 이름이 중복되는 문제를 override로 해결해야 함.
 class Customer implements Buyer, Seller {
 	
 	@Override  // Seller 인터페이스의 추상 메서드를 구현
@@ -46,6 +57,12 @@ class Customer implements Buyer, Seller {
 	@Override  // Buyer 인터페이스의 추상 메서드를 구현
 	public void buy() {
 		System.out.println("구매...");
+	}
+
+	@Override
+	public void order() {
+		Buyer.super.order();  // Buyer 인터페이스의 order 메서드를 사용.
+		Seller.super.order();  // Seller 인터페이스의 oder 메서드를 사용.
 	}
 	
 }
