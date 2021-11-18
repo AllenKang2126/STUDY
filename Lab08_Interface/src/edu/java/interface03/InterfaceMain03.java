@@ -5,6 +5,11 @@ public class InterfaceMain03 {
 	public static void main(String[] args) {
 		// Customer 인스턴스 생성
 		Customer customer1 = new Customer();
+		customer1.buy();
+		customer1.sell();
+		
+		System.out.println();
+		Buyer customer2 = new Customer();
 
 	}
 
