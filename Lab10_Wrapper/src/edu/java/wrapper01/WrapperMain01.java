@@ -1,6 +1,8 @@
 package edu.java.wrapper01;  // 클래스 = 데이터 (+ 생성자) + 기능 = 데이터 타입
 // 기본 타입 -> 기능 x, 메서드 x.
 
+import java.util.Scanner;
+
 // Wrapper class : 자바의 기본 데이터 타입을 감싸는 (상자와 같은) 클래스
 // java.lang 패키지에 포함. import 문 없이 사용 가능.
 // 기본 데이터 타입(primitive type) : boolean, byte, short, int, long, char, float, double
@@ -33,6 +35,22 @@ public class WrapperMain01 {
 		int z = num3;  // auto-unboxing : 클래스(Integer) 객체에서 정수(int) 값을 추출
 		System.out.println(z);
 		
+		// Integer.parseInt(String) : 문자열(String)을 기본 타입 int 값으로 변환해서 리턴.
+		int number = Integer.parseInt("123");
+		System.out.println(number);
+		
+		// parseInt 메서드 응용
+		// (1) 정수 입력 ---> (2) 문자열 입력
+		// Scanner 클래스의 nextInt()를 사용하면, 정수 뒤에 입력된 엔터를 제거하기 위해서 nextLine() 메서드를 호출해야만 함.
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수를 입력하세요>>>");
+		String s = sc.nextLine();
+		int value = Integer.parseInt(s);
+		System.out.println(value);
+		
+		System.out.println("문자열 입력>>>");
+		String s2 = sc.nextLine();
+		System.out.println(s2);
 	}
 
 }
