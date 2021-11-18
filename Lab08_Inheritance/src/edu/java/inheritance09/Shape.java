@@ -16,7 +16,7 @@ public abstract class Shape {  // << 도형들 각각의 넓이, 둘레 길이 �
 	
 	// final method
 	public final void draw() {
-		String result = type + "(넓이:" + area() + ", 둘레:" + perimeter();
+		String result = type + "( 넓이:" + area() + ", 둘레:" + perimeter() + " )";
 		System.out.println(result);
 	}
 }
