@@ -12,7 +12,9 @@ public class InterfaceMain03 {
 		Buyer customer2 = new Customer();  // 다형성(polymorphism)
 		customer2.buy();
 		// 생성된 인스턴스는 Customer 타입이지만 참조 변수 선언을 Buyer로 했기 때문에, Buyer 인터페이스의 메서드만 보임.
-		
+		if(customer2 instanceof Customer) {
+			((Customer) customer2).sell();
+		}
 
 	}
 
