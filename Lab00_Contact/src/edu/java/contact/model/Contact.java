@@ -1,6 +1,6 @@
 package edu.java.contact.model;
 
-// 연락처 프로그램에서 사용할 데이터 클래스
+// 연락처 프로그램에서 사용할 데이터 객체 - Model, VO(Value Object), DTO(Data Transfer Object)
 public class Contact {
 	// field
 	private String name;
