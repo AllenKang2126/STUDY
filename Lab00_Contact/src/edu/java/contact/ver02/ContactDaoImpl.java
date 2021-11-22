@@ -62,10 +62,10 @@ public class ContactDaoImpl implements ContactDao {
 	public int update(int index, Contact contact) {
 		int result = 0;
 		if (index >= 0 && index < count) {
-//			contacts[index] = contact;
-			contacts[index].setName(contact.getName());
-			contacts[index].setPhone(contact.getPhone());
-			contacts[index].setEmail(contact.getEmail());
+			contacts[index] = contact;
+//			contacts[index].setName(contact.getName());
+//			contacts[index].setPhone(contact.getPhone());
+//			contacts[index].setEmail(contact.getEmail());
 			result = 1;
 		}
 		return result;
