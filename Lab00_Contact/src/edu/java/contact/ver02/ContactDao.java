@@ -2,7 +2,7 @@ package edu.java.contact.ver02;
 
 import edu.java.contact.model.Contact;
 
-// MVC 아키텍쳐에서 Controller 인터페이스
+// MVC 아키텍쳐에서 Controller 인터페이스 - DAO(Data Access Object) 
 public interface ContactDao {
 	
 	/**

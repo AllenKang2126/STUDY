@@ -23,10 +23,8 @@ public class ListMain04 {
 		System.out.println("== : " + (s1 == s2));  // -> 주소 값 다름.
 		System.out.println("equals : " + s1.equals(s2));  // -> 문자열의 내용 같음.
 		System.out.println("s1 hash : " + s1.hashCode());
-		System.out.println("s2 hash : " + s2.hashCode());
+		System.out.println("s2 hash: " + s2.hashCode()); // -> equals가 true이면 hashCode가 같음.
 		
-		
-
 	}
 
 }

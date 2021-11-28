@@ -35,6 +35,7 @@ public class ContactMain02 {
 				break;
 			case UPDATE:
 				updateContactInfo();
+				break;
 			default:
 				System.out.println("다시 선택해주세요...");
 			} // end switch
