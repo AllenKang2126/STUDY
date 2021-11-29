@@ -37,9 +37,9 @@ public class ContactDaoImpl implements ContactDao {
 	}
 
 	@Override
-	public Contact select(int index) {
+	public Contact select(int index) {  // Contact 객체 자체를 리턴
 		Contact result = null;
-		if(index >= 0 && index < MAX_LENGTH) {
+		if(index >= 0 && index < MAX_LENGTH) {  // index 가 정상적인 범위 안에 있는지 여부 확인용.
 			result = contacts[index];
 		}
 		
@@ -47,7 +47,7 @@ public class ContactDaoImpl implements ContactDao {
 	}
 
 	@Override
-	public int insert(Contact c) {
+	public int insert(Contact c) {  // Ver 0.2에선 연락처의 갯수를 검사를 해야하는 코드가 필요불가결이었음.
 		int result = 0;
 		if(count < MAX_LENGTH) {  // 배열에 저장된 원소의 개수가 배열 크기보다 작으면
 			contacts[count] = c;  // 배열에 저장된 가장 마지막 원소 바로 뒤에 전달받은 연락처를 추가
@@ -59,7 +59,7 @@ public class ContactDaoImpl implements ContactDao {
 	}
 
 	@Override
-	public int update(int index, Contact contact) {
+	public int update(int index, Contact contact) {  // Ver 0.2
 		int result = 0;
 		if (index >= 0 && index < count) {
 			contacts[index] = contact;
