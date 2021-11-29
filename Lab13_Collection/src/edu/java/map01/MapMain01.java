@@ -3,6 +3,7 @@ package edu.java.map01;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 /*
  * Collection<E>
@@ -81,6 +82,17 @@ public class MapMain01 {
 		for (Integer k : kset) {
 			System.out.println("key = " + k + ", value = " + students.get(k));
 		}
+		
+		// HashMap과 TreeMap 비교
+		TreeMap<Integer, String> map = new TreeMap<>();
+		map.put(10, "한국");
+		map.put(100, "중국");
+		map.put(1, "일본");
+		Set<Integer> kset2 = map.keySet();
+		System.out.println(kset2);  // TreeMap인 경우 keySet 메서드는 오름차순 정렬된 key들의 집합을 리턴.
+		
+		Set<Integer> kset3 = map.descendingKeySet();
+		System.out.println(kset3);
 
 	} // end main()
 
