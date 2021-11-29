@@ -25,7 +25,7 @@ public class FileMain02 {
 					break;  // 무한 루프 종료
 				}
 //				System.out.println(result + "바이트 읽음.");
-				out.write(buffer, 0, result);;  // 파일에 20바이트씩 쓰기(write)
+				out.write(buffer, 0, result);  // 파일에 20바이트씩 쓰기(write)
 				// 읽은 바이트만큼 쓰기.
 			}
 			System.out.println("파일 복사 성공!");
