@@ -1,5 +1,8 @@
 package edu.java.file05;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+
 /*
  * try-with-resource 구문(Java 7 버전부터 제공)
  * 
@@ -22,6 +25,18 @@ public class FileMain05 {
 	public static void main(String[] args) {
 		// try-with-resource 구문
 
-	}
+		try (FileInputStream in = new FileInputStream("data/test.txt");
+				BufferedInputStream bin = new BufferedInputStream(in);) {
+			int b = bin.read();
+			System.out.println((char) b);
+			b = bin.read();
+			System.out.println((char) b);
+			// BIS 객체 bin의 close가 자동 호출 -> FIS 객체 in의 close가 자동 호출
+		} catch (Exception e) {
+			e.printStackTrace();
+			// BIS 객체 bin의 close가 자동 호출 -> FIS 객체 in의 close가 자동 호출
+		}
 
-}
+	} // end main
+
+} // end class
