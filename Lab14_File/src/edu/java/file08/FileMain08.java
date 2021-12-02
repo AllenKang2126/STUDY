@@ -10,9 +10,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class FileMain08 {
+	private static final String FILE_NAME = "data/students.dat";
 
 	public static void main(String[] args) {
-		try (FileOutputStream out = new FileOutputStream("data/students.dat");
+		try (FileOutputStream out = new FileOutputStream(FILE_NAME);
 				BufferedOutputStream bout = new BufferedOutputStream(out);
 				ObjectOutputStream oos = new ObjectOutputStream(bout);) {
 
