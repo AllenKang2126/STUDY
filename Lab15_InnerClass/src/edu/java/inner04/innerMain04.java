@@ -7,7 +7,7 @@ public class innerMain04 {
 	
 	public static void main(String[] args) {
 		//Button 클래스의 인스턴스를 생성
-		Button btnFinish = new Button("Finish");
+		Button btnFinish = new Button("Finish");  // 버튼을 만듦.
 		
 		// Button.OnClickListener 인터페이스를 구현하는 클래스의 인스턴스를 생성
 		FinishListener finish = new FinishListener();  // 버튼을 클릭했을 때 할 일 정의.

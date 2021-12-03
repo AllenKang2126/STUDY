@@ -21,7 +21,7 @@ package edu.java.inner01;
  *    2) static 내부 클래스(중첩 클래스, nested class): static인 멤버 내부 클래스.
  *       - 외부 클래스의 인스턴스 생성 여부와 상관 없이 사용할 수 있는 내부 클래스.
  * 2. 지역 내부 클래스: 메서드 내부에서 정의(선언)하는 클래스.
- * 3. 익명 클래스(anonymous class): 이름이 없는 내부 클래스.
+ * 3. 익명 클래스(anonymous class): 이름이 없는 내부 클래스. 클래스 정의와 동시에 객체 생성도 이루어지는 클래스.
  * 외부 클래스는 public 또는 package 범위만 가능하지만, 내부 클래스는 public, protected, package, private 모두 가능.
  * 
  */
