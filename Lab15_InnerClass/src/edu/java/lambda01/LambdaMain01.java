@@ -15,11 +15,33 @@ public class LambdaMain01 {
 
 			@Override
 			public double calculate(double x, double y) {
-				return 0;
+				return x - y;
 			}
-			
-		}  // end local class Subtracter
 
+		} // end local class Subtracter
+
+		Calculable Subtracter = new Subtracter(); // 지역 클래스 객체 생성
+		result = Subtracter.calculate(1.0, 2.0); // 지역 클래스 객체의 메서드 호출
+		System.out.println(result);
+
+		// 3. 익명 (내부) 클래스(anonymous inner class) - 객체 생성과 클래스 정의(선언)을 동시에.
+		Calculable multiplier = new Calculable() {
+			@Override
+			public double calculate(double x, double y) {
+				return x * y;
+			}
+		};
+		
+		result = multiplier.calculate(2.5, 5);
+		System.out.println(result);
+		
+		// 4. 람다 표현식(lambda expression)
+		// 객체 생성과 클래스 정의를 동시에 하는 익명 클래스 객체 생성을 간단히 표현하는 문장.
+		// Functional interface인 경우에만 람다 표현식을 사용할 수 있음.
+		Calculable divider = (x, y) -> x / y;
+		result = divider.calculate(1.0, 2.0);
+		System.out.println(result);
+		
 	} // end main()
 
 } // end class LambdaMain01
