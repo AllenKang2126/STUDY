@@ -5,18 +5,25 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class AppMain05 {
-	
-	// 이미지 파일들이 저장된 폴더와 파일 이미지
+
+	// 이미지 파일들이 저장된 폴더와 파일 이름을 문자열 상수 (배열)로 정의
 	private static final String[] IMAGES = {
-			"flower1.jpg"
-			
+			"images/flower1.jpg",
+			"images/flower2.jpg",
+			"images/flower3.jpg",
+			"images/flower4.jpg",
+			"images/flower5.jpg",
 	};
+	
+	// 현재 application window에서 보여지는 이미지의 인덱스를 저장하는 변수
+	private int index;
 
 	private JFrame frame;
 	private JLabel labelImage;
@@ -98,12 +105,12 @@ public class AppMain05 {
 
 	private void showNextImage() {
 		// 현재 인덱스(index)가 배열의 마지막의 인덱스보다 작으면
-		if(index < IMAGE.length - 1) {
+		if(index < IMAGES.length - 1) {
 			index++;  // 인덱스 증가
 			// 배열에서 증가된 인덱스로 파일 이름을 찾아서 이미지 아이콘을 설정
 			labelImage.setIcon(new ImageIcon(IMAGES[index]));
 		} else {
-			JOptionPane.showMessageDialog(frame, "마지막 이미지입니다...");
+			JOptionPane.showMessageDialog(frame, "마지막 이미지입니다!!");
 		}
 	}
 
