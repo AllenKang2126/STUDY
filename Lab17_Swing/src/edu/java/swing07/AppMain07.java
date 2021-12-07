@@ -80,6 +80,7 @@ public class AppMain07 {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				showRegister();
+				clearAllContents();
 			}
 		});
 		btnConfirm.setFont(new Font("바탕", Font.BOLD, 30));
@@ -90,7 +91,13 @@ public class AppMain07 {
 		textArea.setFont(new Font("D2Coding", Font.PLAIN, 32));
 		textArea.setBounds(12, 235, 440, 186);
 		frame.getContentPane().add(textArea);
-	}
+	}  // end initialize()
+
+	private void clearAllContents() {
+		idField.setText("");
+		passwordField.setText("");
+		
+	}  // end ClearAllContents
 
 	private void showRegister() {
 		String id = idField.getText();
@@ -98,7 +105,5 @@ public class AppMain07 {
 		StringBuffer result = new StringBuffer();
 		result.append("아이디 : ").append(id).append("\n").append("비밀번호 : ").append(pw);
 		textArea.setText(result.toString());
-		
-		
-	}
-}
+	}  // end showRegister()
+}  // end class
