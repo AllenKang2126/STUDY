@@ -48,33 +48,34 @@ public class AppMain03 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		class Arithmetic{
+		class Arithmetic {
 			private double result;
 			private double x;
 			private double y;
-			
+
 			public Arithmetic(double x, double y) {
 				this.x = x;
 				this.y = y;
 			}
-			
+
 			public void ArithmeticMultiply() {
 				try {
-				result = x * y;
-				textAnswer.setText(x + " x " + y + " = " + result);
+					result = x * y;
+					textAnswer.setText(x + " x " + y + " = " + result);
 				} catch (NumberFormatException ex) {
 					textAnswer.setText("Number1 또는 Number2는 숫자를 입력하세요...");
 				}
 			}
-			public void ArithmeticDivide() {  // 더 줄이는 방법을 모르겠습니다...
+
+			public void ArithmeticDivide() { // 더 줄이는 방법을 모르겠습니다...
 				try {
-				result = x / y;
-				textAnswer.setText(x + " / " + y + " = " + result);
+					result = x / y;
+					textAnswer.setText(x + " / " + y + " = " + result);
 				} catch (NumberFormatException ex) {
 					textAnswer.setText("Number1 또는 Number2는 숫자를 입력하세요...");
 				}
 			}
-			
+
 		}
 		frame = new JFrame();
 		frame.setBounds(100, 100, 600, 300);
@@ -105,6 +106,7 @@ public class AppMain03 {
 
 		btnSum = new JButton("+");
 		btnSum.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				// + 버튼이 할 일을 작성
 				// textNumber1, textNumber2에 입력된 문자열을 숫자(double)로 변환.
@@ -126,6 +128,7 @@ public class AppMain03 {
 
 		btnSubtract = new JButton("-");
 		btnSubtract.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				// - 버튼이 할 일을 작성
 				try {
@@ -144,9 +147,13 @@ public class AppMain03 {
 
 		btnMultiply = new JButton("x");
 		btnMultiply.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				Arithmetic a1 = new Arithmetic(Double.parseDouble(textInput1.getText()), Double.parseDouble(textInput2.getText()));
-				a1.ArithmeticMultiply();
+				// parameter ActionEvent e : 이벤트를 발생시킨 객체에 대한 정보를 가지고 있는 클래스.
+				// actionPerformed 메서드에 전달된 argument e를 메서드에 전달.
+				performCalculation(e);
+//				Arithmetic a1 = new Arithmetic(Double.parseDouble(textInput1.getText()), Double.parseDouble(textInput2.getText()));
+//				a1.ArithmeticMultiply();
 			}
 		});
 		btnMultiply.setFont(new Font("D2Coding", Font.BOLD, 32));
@@ -155,9 +162,13 @@ public class AppMain03 {
 
 		btnDivide = new JButton("/");
 		btnDivide.addActionListener(new ActionListener() {
+			
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				Arithmetic a1 = new Arithmetic(Double.parseDouble(textInput1.getText()), Double.parseDouble(textInput2.getText()));
-				a1.ArithmeticDivide();
+				performCalculation(e);
+//				Arithmetic a1 = new Arithmetic(Double.parseDouble(textInput1.getText()),
+//						Double.parseDouble(textInput2.getText()));
+//				a1.ArithmeticDivide();
 			}
 		});
 		btnDivide.setFont(new Font("D2Coding", Font.BOLD, 32));
@@ -169,8 +180,31 @@ public class AppMain03 {
 		textAnswer.setBounds(12, 204, 560, 47);
 		frame.getContentPane().add(textAnswer);
 		textAnswer.setColumns(10);
-		
 
-	}  // end Main()
+	} // end initialize()
 
-}  // end class AppMain03
+	// 바깥 클래스(outer class, enclosing class)에서 정의한 메서드는 inner class에서도 사용 가능!
+	private void performCalculation(ActionEvent e) {
+		try {
+			// JTextField에 있는 문자열을 읽어서 숫자로 변환
+			double x = Double.parseDouble(textInput1.getText());
+			double y = Double.parseDouble(textInput2.getText());
+
+			// 이벤트가 발생한 버튼에 따라서 서로 다른 계산을 수행하고 결과를 문자열로 작성
+			Object source = e.getSource();
+			String resultMessage = "";
+			if(source == btnMultiply) {
+				resultMessage = x + " x " + y + " = " + (x * y);
+			} else if (source == btnDivide) {
+				resultMessage = x + " / " + y + " = " + (x /+ y);
+			}
+			// 결과 메세지를 JtextField에 출력
+			textAnswer.setText(resultMessage);
+			
+		} catch (NumberFormatException ex) {
+			textAnswer.setText("Number 1 또는 Number 2 는 숫자로 입력해야 합니다...");
+		}
+
+	}
+
+} // end class AppMain03
