@@ -101,9 +101,17 @@ public class AppMain07 {
 
 	private void showRegister() {
 		String id = idField.getText();
+		if(idField.getText().equals("")) {
+			textArea.setText("아이디를 입력해주세요!!!");
+		} else {
+//		String pw = passwordField.getText();
+		// -> JPasswordField 클래스의 getText 메서드는 deprecated(더 이상 사용을 권장하지 않는) 메서드.
+		// -> 더 이상 오류 수정을 하지 않고, Java 버전이 업그레이드될 때 사라질 수 있는 메서드.
+		// -> getText 대신에 getPassword 메서드를 사용하기를 권장.
 		char[] pw = passwordField.getPassword();
 		StringBuffer result = new StringBuffer();
 		result.append("아이디 : ").append(id).append("\n").append("비밀번호 : ").append(pw);
 		textArea.setText(result.toString());
+		}
 	}  // end showRegister()
 }  // end class
