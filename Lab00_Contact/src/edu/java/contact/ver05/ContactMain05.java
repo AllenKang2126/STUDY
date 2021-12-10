@@ -155,6 +155,6 @@ public class ContactMain05 {
 		scrollPane.setVisible(!aFlag);
 
 		btnBackToMenu.setVisible(!aFlag);
-		
+		 
 	}
 }
